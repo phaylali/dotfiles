@@ -1,0 +1,32 @@
+@theme "/home/phaylali/.config/rofi/config.rasi"
+
+listview {
+  columns:       6;
+  lines:         6;
+}
+
+element-text {
+  font:            "Rubik 12";
+}
+entry {
+      placeholder:			"Search Emojis";
+      text-color: @text;
+      font:				"Rubik 12";
+      expand:                         true;
+}
+mainbox {
+    	children:                       [ inputbar, listview ];
+    	spacing:                       	2%;
+    	padding:                        2% 2% 0% 2%;
+    
+}
+element {
+    	orientation:                    vertical;
+    	padding:                        -4% 0% 2% 0%;
+    
+}
+inputbar {
+	
+    	margin:                         0%;
+    	padding:                        0px;
+}

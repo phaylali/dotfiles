@@ -1,0 +1,100 @@
+{
+    "layer": "top", 
+    "position": "top", 
+    "modules-left": ["custom/media"],
+    "modules-center": ["tray"],
+    "modules-right": ["custom/gpu0","custom/gpu1","cpu","memory","custom/weather","pulseaudio", "clock", "tray", "custom/lock", "custom/power"],
+    "wlr/workspaces": {
+         "disable-scroll": true,
+         "sort-by-name": true,
+         "format": " {icon} ",
+         "format-icons": {
+             "default": ""
+         }
+     },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+	"custom/weather": {
+    "format": "{}°",
+    "tooltip": true,
+    "interval": 3600,
+    "exec": "~/.config/waybar/scripts/wttrbar",
+    "return-type": "json"
+},
+"custom/spotify": {
+    "exec": "/usr/bin/python3 ~/.config/waybar/scripts/mediaplayer.py --player spotify",
+    "format": "{}  🎵",
+    "return-type": "json",
+    "on-click": "playerctl play-pause",
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous"
+},
+"custom/media": {
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "🎵",
+            "default": "🎵"
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null" 
+        
+    },
+"cpu": {
+        "format": "{usage}% ",
+        "tooltip": true
+    },
+"memory": {
+        "format": "{}% "
+    },
+    
+"custom/gpu1": {
+  "exec": "cat /sys/class/hwmon/hwmon2/device/gpu_busy_percent",
+  "format": "GPU1: {}%",
+  "return-type": "",
+  "interval": 1
+},
+"custom/gpu0": {
+    "exec": "cat /sys/class/hwmon/hwmon1/device/gpu_busy_percent",
+    "format": "GPU0: {}%",
+    "return-type": "",
+    "interval": 1
+  },
+    "custom/music": {
+        "format": "▶️  {}",
+        "escape": true,
+        "interval": 5,
+        "tooltip": false,
+        "exec": "playerctl metadata --format='{{ title }}'",
+        "on-click": "playerctl play-pause",
+        "max-length": 50
+    },
+    "clock": {
+        "timezone": "Africa/Casablanca",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "📅 {:%d/%m/%Y}",
+        "format": "🕟 {:%H:%M}"
+    },
+    "pulseaudio": {
+        "scroll-step": 1, 
+        "format": "{icon} {volume}%",
+        "format-muted": "🔇",
+        "format-icons": {
+            "default": ["🔈", "🔉", "🔊"]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/lock": {
+        "tooltip": false,
+        "on-click": "sh -c '(sleep 0.5s; swaylock --grace 0)' & disown",
+        "format": "🔒"
+    },
+    "custom/power": {
+        "tooltip": false,
+        "on-click": "wlogout &",
+        "format": "⚡"
+    }
+}

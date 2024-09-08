@@ -1,0 +1,4 @@
+action = type
+files = [emojis, math]
+clipboarder = wl-copy
+selector-args = -theme /home/phaylali/.config/rofi/config-moji.rasi
