@@ -24,6 +24,7 @@
         "color":"magenta"
         
         
+        
 
         
     },
@@ -37,7 +38,8 @@
         {
             "key": "║ {#31}👑 Master     {#keys}║",
             "type": "title",
-            "format": "{user-name}"
+            "format": "{user-name}",
+            
             
             
         },

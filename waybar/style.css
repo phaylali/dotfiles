@@ -27,17 +27,18 @@
 }
 
 #workspaces button.active {
-  color: @sky;
+  color: @lavender;
   border-radius: 1rem;
 }
 
 #workspaces button:hover {
-  color: @sapphire;
+  color: @lavender;
   border-radius: 1rem;
 }
 
 #custom-music,
-#custom-media,
+#custom-music-previous,
+#custom-music-next,
 #tray,
 #backlight,
 #clock,
@@ -49,100 +50,124 @@
 #custom-gpu1,
 #custom-lock,
 #custom-weather,
+#network,
+#hyprland-language,
+#custom-reload,
 #custom-power {
   background-color: @surface0;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem ;
   margin: 5px 0;
-  
-  
 }
 
 #clock {
-  color: @blue;
+  color: @lavender;
   border-radius: 0px 1rem 1rem 0px;
   margin-right: 1rem;
 }
 
 #battery {
-  color: @green;
+  color: @lavender;
 }
 
 #battery.charging {
-  color: @green;
+  color: @lavender;
 }
 
 #battery.warning:not(.charging) {
-  color: @red;
+  color: @lavender;
 }
 
 #backlight {
-  color: @yellow;
+  color: @lavender;
 }
 
 #backlight, #battery {
     border-radius: 0;
 }
 #custom-weather{
-  color: @yellow;
+  color: @lavender;
   border-radius: 1rem 1rem 1rem 1rem;
 }
-
+#custom-reload{
+  color: @lavender;
+  border-radius: 1rem 1rem 1rem 1rem;
+  margin-left: 1rem;
+}
+#hyprland-language{
+  color: @lavender;
+  border-radius: 1rem 1rem 1rem 1rem;
+  margin-left: 1rem;
+  
+}
 #pulseaudio {
-  color: @maroon;
+  color: @lavender;
   border-radius: 1rem 0px 0px 1rem;
   margin-left: 1rem;
 }
 
 #custom-music {
-  color: @mauve;
-  border-radius: 1rem;
+  color: @lavender;
+  border-radius: 0px 1rem 1rem 0px;
+  padding-left: 0.1rem;
+  
+  
+}
+#custom-music-previous {
+  color: @lavender;
+  border-radius: 1rem 0px 0px 1rem;
+  margin-left: 1rem;
+  padding-top: 0.50rem;
+  padding-left: 1rem;
+}
+#custom-music-next {
+  color: @lavender;
+  border-radius: 0rem 0px 0px 0rem;
+  padding-top: 0.50rem;
+  padding-left: 0.1rem;
+ 
+  
 }
 #cpu {
-  color: @maroon;
+  color: @lavender;
   border-radius: 1rem 0px 0px 1rem;
   margin-left: 1rem;
 }
 #memory{
-  color: @yellow;
+  color: @lavender;
   border-radius: 0px 1rem 1rem 0px;
   margin-right: 1rem;
-
+  padding-left: 0.5rem;
 }
 #custom-gpu0{
-  color: @yellow;
+  color: @lavender;
   border-radius: 1rem 0px 0px 1rem;
   margin-left: 1rem;
 }
 #custom-gpu1{
-  color: @yellow;
+  color: @lavender;
   border-radius: 0px 1rem 1rem 0px;
+  padding-left: 0.5rem;
   
 }
-#custom-spotify {
-  padding: 0 10px;
-  margin: 0 4px;
-  background-color: #1DB954;
-  color: black;
-}
-#custom-media {
-  padding: 0 10px;
-  margin: 0 4px;
-  background-color: #1DB954;
-  color: black;
+#network{
+  color: @lavender;
+  border-radius: 1rem 1rem 1rem 1rem;
 }
 #custom-lock {
     border-radius: 1rem 0px 0px 1rem;
     color: @lavender;
+
 }
 
 #custom-power {
     margin-right: 1rem;
     border-radius: 0px 1rem 1rem 0px;
-    color: @red;
+    color: @lavender;
+    padding-left: 0.5rem;
 	
 }
 
 #tray {
-  margin-right: 1rem;
+  margin-left: 1rem;
   border-radius: 1rem;
 }

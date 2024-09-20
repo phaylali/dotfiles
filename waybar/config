@@ -1,9 +1,9 @@
 {
     "layer": "top", 
     "position": "top", 
-    "modules-left": ["custom/media"],
-    "modules-center": ["tray"],
-    "modules-right": ["custom/gpu0","custom/gpu1","cpu","memory","custom/weather","pulseaudio", "clock", "tray", "custom/lock", "custom/power"],
+    "modules-left": ["custom/reload","hyprland/language","tray","custom/music-previous","custom/music-next","custom/music"],
+    "modules-center": [],
+    "modules-right": ["network","custom/gpu0","custom/gpu1","cpu","memory","custom/weather","pulseaudio", "clock", "custom/lock", "custom/power"],
     "wlr/workspaces": {
          "disable-scroll": true,
          "sort-by-name": true,
@@ -12,9 +12,17 @@
              "default": ""
          }
      },
+     "hyprland/language": {
+              "format": "{}",
+              "format-en": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+              "format-ar": "🇲🇦",
+              "keyboard-name":"royuan-epomaker-th80-pro",
+              "on-click": "hyprctl switchxkblayout royuan-epomaker-th80-pro next"
+      },
     "tray": {
         "icon-size": 21,
         "spacing": 10
+        
     },
 	"custom/weather": {
     "format": "{}°",
@@ -23,55 +31,68 @@
     "exec": "~/.config/waybar/scripts/wttrbar",
     "return-type": "json"
 },
-"custom/spotify": {
-    "exec": "/usr/bin/python3 ~/.config/waybar/scripts/mediaplayer.py --player spotify",
-    "format": "{}  🎵",
-    "return-type": "json",
-    "on-click": "playerctl play-pause",
-    "on-scroll-up": "playerctl next",
-    "on-scroll-down": "playerctl previous"
+//type "netstat -i" to check your network adapters names, for me I had two but my ethernet's name is "enp7s0"
+"network":{
+    "interface": "enp7s0",
+    "format":"⏫ {bandwidthUpBits} | ⏬ {bandwidthDownBits}",
+    "interval":1
 },
-"custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "🎵",
-            "default": "🎵"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null" 
-        
+"custom/reload": {
+        "format": "🔃",
+        "tooltip": true,
+        "on-click":"killall -SIGUSR2 waybar"
     },
+    
 "cpu": {
-        "format": "{usage}% ",
-        "tooltip": true
+        "format": "📀 {usage}%",
+        "tooltip": true,
+        "interval":1
     },
 "memory": {
-        "format": "{}% "
+        "format": "💾 {}%",
+        "tooltip": true,
+        "interval":1
+        
     },
     
 "custom/gpu1": {
   "exec": "cat /sys/class/hwmon/hwmon2/device/gpu_busy_percent",
-  "format": "GPU1: {}%",
+  "format": "💻 {}%",
   "return-type": "",
   "interval": 1
 },
 "custom/gpu0": {
     "exec": "cat /sys/class/hwmon/hwmon1/device/gpu_busy_percent",
-    "format": "GPU0: {}%",
+    "format": "🖥️ {}%",
     "return-type": "",
     "interval": 1
   },
+  
     "custom/music": {
-        "format": "▶️  {}",
         "escape": true,
         "interval": 5,
         "tooltip": false,
-        "exec": "playerctl metadata --format='{{ title }}'",
-        "on-click": "playerctl play-pause",
+        "exec": "~/.config/waybar/scripts/music.sh",
+        "on-click": "playerctl play-pause --ignore-player=firefox",
         "max-length": 50
     },
+    "custom/music-previous": {
+        "format":"⏮️",
+        "escape": true,
+        "interval": 5,
+        "tooltip": false,
+        "on-click": "playerctl previous --ignore-player=firefox",
+        "max-length": 50
+    },
+    "custom/music-next": {
+        "format":"⏭️",
+        "escape": true,
+        "interval": 5,
+        "tooltip": false,
+        "on-click": "playerctl next --ignore-player=firefox",
+        "max-length": 50
+    },
+
     "clock": {
         "timezone": "Africa/Casablanca",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
@@ -89,7 +110,8 @@
     },
     "custom/lock": {
         "tooltip": false,
-        "on-click": "sh -c '(sleep 0.5s; swaylock --grace 0)' & disown",
+        //"on-click": "sh -c '(sleep 0.5s; swaylock --grace 0)' & disown",
+        "on-click":"hyprlock",
         "format": "🔒"
     },
     "custom/power": {
@@ -97,4 +119,7 @@
         "on-click": "wlogout &",
         "format": "⚡"
     }
+    
+    
+    
 }
