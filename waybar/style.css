@@ -1,39 +1,38 @@
 @import "mocha.css";
 
 * {
-  
-  font-family: 'Noto Sans Regular';
-  font-size: 17px;
-  min-height: 0;
+    font-family: "Noto Sans Regular";
+    font-size: 17px;
+    min-height: 0;
 }
 
 #waybar {
-  background: transparent;
-  color: @text;
-  margin: 5px 5px;
+    background: transparent;
+    color: @text;
+    margin: 5px 5px;
 }
 
 #workspaces {
-  border-radius: 1rem;
-  margin: 5px;
-  background-color: @surface0;
-  margin-left: 1rem;
+    border-radius: 1rem;
+    margin: 5px;
+    background-color: @surface0;
+    margin-left: 1rem;
 }
 
 #workspaces button {
-  color: @lavender;
-  border-radius: 1rem;
-  padding: 0.4rem;
+    color: @lavender;
+    border-radius: 1rem;
+    padding: 0.4rem;
 }
 
 #workspaces button.active {
-  color: @lavender;
-  border-radius: 1rem;
+    color: @lavender;
+    border-radius: 1rem;
 }
 
 #workspaces button:hover {
-  color: @lavender;
-  border-radius: 1rem;
+    color: @lavender;
+    border-radius: 1rem;
 }
 
 #custom-music,
@@ -51,112 +50,106 @@
 #custom-lock,
 #custom-weather,
 #network,
-#hyprland-language,
+#language,
 #custom-reload,
 #custom-power {
-  background-color: @surface0;
-  padding: 0.5rem 1rem ;
-  margin: 5px 0;
+    background-color: @surface0;
+    padding: 0.5rem 1rem;
+    margin: 5px 0;
 }
 
 #clock {
-  color: @lavender;
-  border-radius: 0px 1rem 1rem 0px;
-  margin-right: 1rem;
+    color: @lavender;
+    border-radius: 0px 1rem 1rem 0px;
+    margin-right: 1rem;
 }
 
 #battery {
-  color: @lavender;
+    color: @lavender;
 }
 
 #battery.charging {
-  color: @lavender;
+    color: @lavender;
 }
 
 #battery.warning:not(.charging) {
-  color: @lavender;
+    color: @lavender;
 }
 
 #backlight {
-  color: @lavender;
+    color: @lavender;
 }
 
-#backlight, #battery {
+#backlight,
+#battery {
     border-radius: 0;
 }
-#custom-weather{
-  color: @lavender;
-  border-radius: 1rem 1rem 1rem 1rem;
+#custom-weather {
+    color: @lavender;
+    border-radius: 1rem 1rem 1rem 1rem;
 }
-#custom-reload{
-  color: @lavender;
-  border-radius: 1rem 1rem 1rem 1rem;
-  margin-left: 1rem;
+#custom-reload {
+    color: @lavender;
+    border-radius: 1rem 1rem 1rem 1rem;
+    margin-left: 1rem;
 }
-#hyprland-language{
-  color: @lavender;
-  border-radius: 1rem 1rem 1rem 1rem;
-  margin-left: 1rem;
-  
+#language {
+    color: @lavender;
+    border-radius: 1rem 1rem 1rem 1rem;
+    margin-left: 1rem;
 }
 #pulseaudio {
-  color: @lavender;
-  border-radius: 1rem 0px 0px 1rem;
-  margin-left: 1rem;
+    color: @lavender;
+    border-radius: 1rem 0px 0px 1rem;
+    margin-left: 1rem;
 }
 
 #custom-music {
-  color: @lavender;
-  border-radius: 0px 1rem 1rem 0px;
-  padding-left: 0.1rem;
-  
-  
+    color: @lavender;
+    border-radius: 0px 1rem 1rem 0px;
+    padding-left: 0.1rem;
 }
 #custom-music-previous {
-  color: @lavender;
-  border-radius: 1rem 0px 0px 1rem;
-  margin-left: 1rem;
-  padding-top: 0.50rem;
-  padding-left: 1rem;
+    color: @lavender;
+    border-radius: 1rem 0px 0px 1rem;
+    margin-left: 1rem;
+    padding-top: 0.5rem;
+    padding-left: 1rem;
 }
 #custom-music-next {
-  color: @lavender;
-  border-radius: 0rem 0px 0px 0rem;
-  padding-top: 0.50rem;
-  padding-left: 0.1rem;
- 
-  
+    color: @lavender;
+    border-radius: 0rem 0px 0px 0rem;
+    padding-top: 0.5rem;
+    padding-left: 0.1rem;
 }
 #cpu {
-  color: @lavender;
-  border-radius: 1rem 0px 0px 1rem;
-  margin-left: 1rem;
+    color: @lavender;
+    border-radius: 1rem 0px 0px 1rem;
+    margin-left: 1rem;
 }
-#memory{
-  color: @lavender;
-  border-radius: 0px 1rem 1rem 0px;
-  margin-right: 1rem;
-  padding-left: 0.5rem;
+#memory {
+    color: @lavender;
+    border-radius: 0px 1rem 1rem 0px;
+    margin-right: 1rem;
+    padding-left: 0.5rem;
 }
-#custom-gpu0{
-  color: @lavender;
-  border-radius: 1rem 0px 0px 1rem;
-  margin-left: 1rem;
+#custom-gpu0 {
+    color: @lavender;
+    border-radius: 1rem 0px 0px 1rem;
+    margin-left: 1rem;
 }
-#custom-gpu1{
-  color: @lavender;
-  border-radius: 0px 1rem 1rem 0px;
-  padding-left: 0.5rem;
-  
+#custom-gpu1 {
+    color: @lavender;
+    border-radius: 0px 1rem 1rem 0px;
+    padding-left: 0.5rem;
 }
-#network{
-  color: @lavender;
-  border-radius: 1rem 1rem 1rem 1rem;
+#network {
+    color: @lavender;
+    border-radius: 1rem 1rem 1rem 1rem;
 }
 #custom-lock {
     border-radius: 1rem 0px 0px 1rem;
     color: @lavender;
-
 }
 
 #custom-power {
@@ -164,10 +157,9 @@
     border-radius: 0px 1rem 1rem 0px;
     color: @lavender;
     padding-left: 0.5rem;
-	
 }
 
 #tray {
-  margin-left: 1rem;
-  border-radius: 1rem;
+    margin-left: 1rem;
+    border-radius: 1rem;
 }
